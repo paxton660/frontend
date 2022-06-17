@@ -28,16 +28,16 @@ spec:
     - cat
     tty: true
   
-  """"
+  ""
 }
   }
   stages {
     stage('Test') {
       steps {
         container('java') {
-          sh """"
+          sh ""
             echo “******** currently executing Test stage ********”
-          """"
+          ""
         }
       }
     }
