@@ -22,7 +22,6 @@ spec:
     stage("Pushing Image to GCR") {
       steps {
         script {
-          curl https://sdk.cloud.google.com | bash 
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t  gcr.io/gj-playground/frontend . "
           }
         }
