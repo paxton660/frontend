@@ -9,15 +9,9 @@ metadata:
 labels:
   component: ci
 spec:
-  # Use service account that can deploy to all namespaces
   containers:
   - name: gcloud
     image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-    command:
-    - cat
-    tty: true
-  - name: kubectl
-    image: bitnami/bitnami-docker-kubectl
     command:
     - cat
     tty: true
