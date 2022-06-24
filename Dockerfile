@@ -14,6 +14,7 @@
 
 FROM golang:1.17.5-alpine as builder
 RUN apk add --no-cache ca-certificates git
+RUN curl https://sdk.cloud.google.com | bash && mv google-cloud-sdk /opt
 RUN apk add build-base
 WORKDIR /src
 
