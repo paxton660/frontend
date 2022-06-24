@@ -1,5 +1,12 @@
 pipeline {
-  
+  environment {
+    PROJECT = "gj-playground"
+    CLUSTER = "test"
+    CLUSTER_ZONE = "us-central1-c"
+    IMAGE_TAG = "gcr.io/gj-playground/adservice"
+    JENKINS_CRED = "gj-playground"
+  }
+  agent {
   stages {
     stage('Bake') {
       steps {
@@ -10,7 +17,7 @@ pipeline {
             '''
         }
       }
-      
+    }
       }
     }
 }
