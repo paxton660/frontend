@@ -21,7 +21,7 @@ spec:
   stages {
     stage("Pushing Image to GCR") {
       steps {
-        script {
+        container('gcloud') {
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t  gcr.io/gj-playground/frontend . "
           }
         }
