@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: frontend
+spec:
+  replicas:
+  selector:
+      matchLabels:
+          app: frontend
+          role: frontend
+          env: production
+  template:
+    metadata:
+      name: frontend
+      labels:
+        app: frontend
+        role: frontend
+        env: production
+    spec:
+      containers:
+      - name: frontend
+        image: gcr.io/gj-playground/frontend
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "100m"
+        imagePullPolicy: Always
+        ports:
+        - name: frontend
+          containerPort: 80
