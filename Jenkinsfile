@@ -29,7 +29,7 @@ spec:
     stage("Deploy on kubernetes") {
       steps {
         script {
-          kubernetesDeploy(configs: "frontend.yaml")
+          kubernetesDeploy(configs: "frontend.yaml", kubeconfigId: "kubernetes")
         }
       }
     }
