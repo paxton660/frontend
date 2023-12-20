@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/gj-playground/frontend
+        image: gcr.io/turing-goods-403608/frontend:latest
         resources:
           limits:
             memory: "500Mi"
